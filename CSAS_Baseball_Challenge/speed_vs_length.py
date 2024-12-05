@@ -9,11 +9,8 @@ data['bat_speed'] = pd.to_numeric(data['bat_speed'], errors='coerce')
 data['swing_length'] = pd.to_numeric(data['swing_length'], errors='coerce')
 data = data.dropna(subset=['bat_speed', 'swing_length'])
 
-
-filtered_data = data[data['description'] == 'foul']
-
-bat_speed = filtered_data['bat_speed']
-swing_length = filtered_data['swing_length']
+bat_speed = data['bat_speed']
+swing_length = data['swing_length']
 
 bat_speed_mean = np.mean(bat_speed)
 swing_length_mean = np.mean(swing_length)
